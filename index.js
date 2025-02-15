@@ -3,10 +3,12 @@ const { default: mongoose } = require('mongoose')
 const app = express()
 const port = 3000
 const service = require('./service')
+const cors = require('cors')
 
 require('dotenv').config()
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/groceries', async (_, res) => {
   const list = await service.fetchAll()
