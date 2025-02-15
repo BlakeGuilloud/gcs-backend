@@ -1,7 +1,11 @@
 import mongoose from "mongoose"
 
 const grocerySchema = new mongoose.Schema({
-  name: String
+  name: String,
+  isComplete: {
+    default: false,
+    type: Boolean
+  }
 })
 
 const Grocery = mongoose.model('Grocery', grocerySchema)
