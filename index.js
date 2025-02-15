@@ -46,6 +46,12 @@ app.delete('/groceries', async (req, res) => {
   res.send('Success delete many')
 })
 
+app.delete('/deleteCompleted', async (_, res) => {
+  await service.deleteCompleted()
+
+  res.send('Success delete completed')
+})
+
 app.listen(port, () => {
   console.log(`GCS app listening on port ${port}`)
   mongoose.connect(process.env.CONNECTION_STRING)

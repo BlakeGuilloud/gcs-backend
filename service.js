@@ -32,6 +32,10 @@ export const deleteOne = async (_id) => {
   await Grocery.deleteOne({ _id })
 }
 
+export const deleteCompleted = async () => {
+  await Grocery.deleteMany({ isComplete: true })
+}
+
 export const deleteMany = async ({ ids }) => {
   await Grocery.deleteMany({ _id: ids})
 }
