@@ -31,3 +31,7 @@ export const patchOne = async (_id, data) => {
 export const deleteOne = async (_id) => {
   await Grocery.deleteOne({ _id })
 }
+
+export const deleteMany = async ({ ids }) => {
+  await Grocery.deleteMany({ _id: ids})
+}

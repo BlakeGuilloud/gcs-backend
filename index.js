@@ -40,6 +40,12 @@ app.delete('/groceries/:id', async (req, res) => {
   res.send('Success')
 })
 
+app.delete('/groceries', async (req, res) => {
+  await service.deleteMany(req.body)
+
+  res.send('Success delete many')
+})
+
 app.listen(port, () => {
   console.log(`GCS app listening on port ${port}`)
   mongoose.connect(process.env.CONNECTION_STRING)
